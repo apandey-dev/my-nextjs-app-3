@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Tag */}
           <Link
@@ -53,7 +53,7 @@ export default function Navbar() {
                   key={item.path}
                   href={item.path}
                   prefetch={true}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all ${
+                  className={`px-3.5 py-1.5 text-sm font-medium rounded-md transition-all ${
                     active
                       ? 'bg-slate-900 text-white shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -71,7 +71,7 @@ export default function Navbar() {
             {isAuthenticated && user ? (
               <div className="flex items-center space-x-3">
                 <div className="text-right">
-                  <span className="block text-xs font-semibold text-slate-900 leading-none">
+                  <span className="block text-xs font-semibold text-slate-900 leading-none" data-testid="navbar-user-name">
                     {user.name}
                   </span>
                   <span className="text-[10px] text-slate-500 font-mono">
@@ -82,6 +82,7 @@ export default function Navbar() {
                   onClick={logout}
                   className="px-3 py-1.5 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-red-50 hover:text-red-600 border border-slate-200 rounded-md transition-colors"
                   title="Sign out of current session"
+                  data-testid="navbar-logout-btn"
                 >
                   Sign Out
                 </button>
@@ -91,6 +92,7 @@ export default function Navbar() {
                 href="/login"
                 prefetch={true}
                 className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white bg-slate-900 hover:bg-slate-800 rounded-md transition-colors"
+                data-testid="navbar-login-link"
               >
                 Sign In
               </Link>
