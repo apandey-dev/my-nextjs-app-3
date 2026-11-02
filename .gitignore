@@ -1,0 +1,39 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Production & Build outputs
+/.next/
+/out/
+/build
+dist/
+
+# Test files and test artifacts (STRICTLY LOCAL ONLY - DO NOT COMMIT OR PUSH)
+/__tests__/
+/tests/
+*.test.js
+*.test.jsx
+*.spec.js
+*.spec.jsx
+jest.config.js
+jest.setup.js
+/coverage/
+.nyc_output
+
+# Environment variables
+.env
+.env*.local
+.env.production
+.env.development
+
+# Vercel deployment artifacts
+.vercel
+
+# Debug and system files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+Thumbs.db
